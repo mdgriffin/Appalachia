@@ -1,0 +1,23 @@
+{% include '_header.twig' %}
+
+	<h1>{{ record.title }}</h1>
+
+	<div class="content" role="content">
+
+		<ul class="small-blockGrid-2 medium-blockGrid-4 large-blockGrid-5 imageGrid">
+
+			{% for image in record.imagelist %}
+
+				<li>
+					<a href="{{ image(image.filename) }}">
+						<img src="{{ thumbnail(image.filename, 200, 200) }}" title="{{ image.title }}">
+					</a>
+				</li>
+
+			{% endfor %}
+
+		</ul>
+
+		<p>{{ record.textarea }}</p>
+
+{% include '_footer.twig' %}

@@ -1,0 +1,5 @@
+{# This file is inserted as the 'footer' of each listed record. #}
+<h5 class="recordInfo">
+	{% set recdate = record.datepublish|localdate("%A %B %e, %Y") %}
+	{{ __('By <b>%name%,</b> %date%',{ '%name%': record.user.displayname, '%date%': recdate }) }}
+</h5>

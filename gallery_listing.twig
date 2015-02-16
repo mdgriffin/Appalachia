@@ -1,0 +1,35 @@
+{% include '_header.twig' %}
+
+	<h1>Galleries</h1>
+
+	<div class="content p-galleryListing" role="content">
+
+		{% setcontent galleries = "gallery/latest/5" allowpaging %}
+
+		{% for gallery in galleries %}
+
+			<article>
+
+				<h2><a href="{{ gallery.link }}">{{ gallery.title }}</a></h2>
+
+				<ul class="small-blockGrid-2 medium-blockGrid-4 large-blockGrid-5 imageGrid">
+
+					{% for image in gallery.imagelist %}
+
+						<li>
+							<a href="{{ image(image.filename) }}">
+								<img src="{{ thumbnail(image.filename, 300, 300) }}" title="{{ image.title }}">
+							</a>
+						</li>
+
+					{% endfor %}
+
+				</ul>
+
+			</article>
+
+		{% endfor %}
+
+		{{ pager() }}
+
+{% include '_footer.twig' %}

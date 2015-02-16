@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html lt-ie9 lt-ie8 lt-ie7" lang="{{ htmllang() }}"> <![endif]-->
+<!--[if IE 7]>    <html lt-ie9 lt-ie8" lang="{{ htmllang() }}"> <![endif]-->
+<!--[if IE 8]>    <html lt-ie9" lang="{{ htmllang() }}"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="{{ htmllang() }}"> <!--<![endif]-->
+<head>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<title>
+	{% if record.title is defined %}{{ record.title|striptags }} | {% endif %}
+	{{ app.config.get('general/sitename') }}
+	{% if record.title is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff') }}{% endif %}
+	</title>
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{{ paths.theme }}css/style.css">
+
+</head>
+<body>
+
+	<div class="sidebar">
+
+		<div class="sidebar-responsiveBar clearfix">
+			<button id="js-show-nav"><span></span></button>
+		</div>
+
+
+		<div class="sidebar-logo">
+			<a href="{{ paths.root }}"><img src="{{ paths.theme }}img/logo.png" alt=""></a>
+		</div>
+		
+		<nav>
+
+			<ul class="list--reset list--vNav">
+
+				{{ menu('main', '_sub_menu.twig') }}
+			
+			</ul>
+
+		</nav>
+
+	</div><!-- .sidebar -->
+
+	<div class="container">
