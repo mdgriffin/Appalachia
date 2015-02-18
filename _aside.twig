@@ -1,6 +1,6 @@
-<aside>
+<div class="sidebar-content">
 
-	<div>
+	<div class="sidebar-content-section">
 
 		{% setcontent about = "page/about" %}
 
@@ -19,23 +19,26 @@
 
 	</div>
 
-
 	{% for ct in app.config.get('contenttypes') if not ct.viewless|default(false) %}
 
-		{% setcontent records = ct.slug ~ "/latest/5" %}
+		<div class="sidebar-content-section">
 
-		<h5>{{ __('contenttypes.generic.recent', {'%contenttypes%': ct.slug}) }}</h5>
-		
-		<ul>
-			{% for record in records %}
-				<li><a href="{{ record.link }}">{{ record.title }}</a></li>
-			{% else %}
-				<li>{{ __('contenttypes.generic.no-recent', {'%contenttype%': ct.slug}) }}</li>
-			{% endfor %}
-		</ul>
-		
-		<p><a href="{{ paths.root }}{{ct.slug}}">{{ __('contenttypes.generic.overview',{'%contenttypes%': ct.slug}) }} &raquo;</a></p>
+			{% setcontent records = ct.slug ~ "/latest/5" %}
+
+			<h5>{{ __('contenttypes.generic.recent', {'%contenttypes%': ct.slug}) }}</h5>
+			
+			<ul class="list--reset">
+				{% for record in records %}
+					<li><a href="{{ record.link }}">{{ record.title }}</a></li>
+				{% else %}
+					<li>{{ __('contenttypes.generic.no-recent', {'%contenttype%': ct.slug}) }}</li>
+				{% endfor %}
+			</ul>
+			
+			<p><a href="{{ paths.root }}{{ct.slug}}">{{ __('contenttypes.generic.overview',{'%contenttypes%': ct.slug}) }} &raquo;</a></p>
+
+		</div>
 
 	{% endfor %}
 
-</aside>
+</div>
