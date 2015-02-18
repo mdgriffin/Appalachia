@@ -1641,6 +1641,7 @@ button span:after {
   .container {
     width: 100%;
     float: none;
+    margin-top: 16em;
   }
   .container > h1 {
     margin-left: 1em;
@@ -1684,6 +1685,10 @@ button span:after {
   }
   .sidebar-logo {
     padding: 7em 1em 4em 1em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
   .is-navOpen {
     overflow-y: hidden;
