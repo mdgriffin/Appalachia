@@ -1745,10 +1745,11 @@ div.pagination a:hover {
   left: 0;
   margin: 0;
   background: rgba(0,0,0,0.75);
+  color: #fff;
 }
 .p-home-slider h2 a,
 .p-home-slider h3 a {
-  color: #fff;
+  color: inherit;
 }
 .p-home-slider h2 {
   bottom: 3.624006563em;
