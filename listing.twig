@@ -44,9 +44,9 @@
 							</a>
 						{% endif %}
 
-						{% include '_recordfooter.twig' with {record: record} %}
-
 						<p>{{ record.excerpt(300) }} <a href="{{ record.link }}">more</a></p>
+
+						{% include '_recordfooter.twig' with {record: record} %}
 
 					</article>
 
