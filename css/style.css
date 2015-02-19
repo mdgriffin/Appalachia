@@ -1784,58 +1784,6 @@ div.pagination a:hover {
 /**
  * Page Specific styling
  */
-.p-home-slider h2,
-.p-home-slider h3 {
-  position: absolute;
-  left: 0;
-  margin: 0;
-  background: rgba(0,0,0,0.75);
-  color: #fff;
-}
-.p-home-slider h2 a,
-.p-home-slider h3 a {
-  color: inherit;
-}
-.p-home-slider h2 {
-  bottom: 3.624006563em;
-  padding: 0.5em;
-}
-.p-home-slider h3 {
-  bottom: 1em;
-  padding: 0.75em;
-}
-.p-home-slider .pogoSlider-dir-btn {
-  width: 30px;
-  height: 30px;
-}
-.p-home-slider .pogoSlider--dirCenterHorizontal .pogoSlider-dir-btn {
-  margin-top: -15px;
-}
-@media screen and (max-width: 64em) {
-  .p-home-slider {
-    font-size: 0.9em;
-  }
-}
-@media screen and (max-width: 40em) {
-  .p-home-slider {
-    font-size: 0.75em;
-  }
-}
-#js-location-map {
-  height: 500px;
-}
-.p-listing article {
-  margin-bottom: 1em;
-  overflow: hidden;
-}
-.p-listing article img {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-}
-.p-listing article h3 {
-  margin-top: 0;
-}
 .p-record-dir {
   margin: 2em 0;
 }
@@ -1853,6 +1801,61 @@ div.pagination a:hover {
 .p-record-next {
   float: right;
   margin-right: -1em;
+}
+/**
+ * Slider
+ */
+.slider h2,
+.slider h3 {
+  position: absolute;
+  left: 0;
+  margin: 0;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+}
+.slider h2 a,
+.slider h3 a {
+  color: inherit;
+}
+.slider h2 {
+  bottom: 3.624006563em;
+  padding: 0.5em;
+}
+.slider h3 {
+  bottom: 1em;
+  padding: 0.75em;
+}
+.slider .pogoSlider-dir-btn {
+  width: 30px;
+  height: 30px;
+}
+.slider .pogoSlider--dirCenterHorizontal .pogoSlider-dir-btn {
+  margin-top: -15px;
+}
+@media screen and (max-width: 64em) {
+  .slider {
+    font-size: 0.9em;
+  }
+}
+@media screen and (max-width: 40em) {
+  .slider {
+    font-size: 0.75em;
+  }
+}
+#js-location-map {
+  height: 500px;
+}
+.p-listing article {
+  margin-bottom: 1em;
+  overflow: hidden;
+}
+.p-listing article img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+.p-listing article h3 {
+  margin-top: 0;
 }
 /**
  * Element Specific styling

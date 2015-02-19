@@ -4,49 +4,7 @@
 
 		<div class="fullWidthTop">
 			
-			<div class="pogoSlider p-home-slider" id="js-home-banner">
-
-				{% setcontent slides = "slide/latest/4" %}
-
-				{% for slide in slides %}
-
-					{% set relatedslide = slide.related()|first %}
-
-					<div class="pogoSlider-slide" style="background-image:url({{ slide.image|thumbnail(1200, 500) }});">
-						
-						<h2 class="pogoSlider-slide-element" data-in="slideLeft" data-out="slideRight" data-duration="400">
-							
-							{% if relatedslide is not empty %}
-								<a href="{{ relatedslide.link }}">
-							{% endif %}
-							
-								{{ slide.title }}
-							
-							{% if relatedslide is not empty %}
-								</a>
-							{% endif %}
-						</h2>
-
-						<h3 class="pogoSlider-slide-element" data-in="slideRight" data-out="slideLeft" data-duration="400">
-
-							{% if relatedslide is not empty %}
-									<a href="{{ relatedslide.link }}">
-								{% endif %}
-								
-								{{ slide.subtitle }}
-							
-							{% if relatedslide is not empty %}
-								</a>
-							{% endif %}
-
-						</h3>
-
-					</div>
-
-					
-				{% endfor %}
-
-			</div><!-- .pogoSlider -->
+		{% include '_slider.twig' %}
 
 		</div>
 
