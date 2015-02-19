@@ -6,6 +6,14 @@
 
 		<article>
 
+			{% if record.image!="" %}
+				<div class="fullWidthTop">	
+					<a href="{{ image(record.image) }}">
+						<img class="image--fullWidth" src="{{ record.image|thumbnail(1200,400) }}" title="{{ image.title }}">
+					</a>
+				</div>
+			{% endif %}
+
 			{% if record.subtitle %}
 				<h3>{{ record.subtitle }}</h3>
 			{% endif %}
@@ -54,7 +62,6 @@
 
 				{% elseif record.fieldtype(key) == "select" %}
 
-					{# special case for 'select' fields.. If it's a multiple select, the value is an array. #}
 					<p>
 						<strong>{{ key }}: </strong>
 						{{ attribute(record, key)|join(", ") }}
@@ -70,10 +77,6 @@
 				{%  endif %}
 
 			{% endfor %}
-
-			{# Uncomment this if you wish to dump the entire record to the client, for debugging purposes.
-			{{ print(record) }}
-			#}
 
 			{% include '_record_info.twig' with {record: record} %}
 
@@ -105,7 +108,5 @@
 			{% endif %}
 
 		</article>
-
-		{# include '_aside.twig' #}
 
 {% include '_footer.twig' %}
