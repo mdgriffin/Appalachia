@@ -1500,10 +1500,10 @@ blockquote {
   display: block;
   max-width: 100%;
 }
-.sidebar-content {
+.sidebar aside {
   color: #fff;
 }
-.sidebar-content-section {
+.sidebar-section {
   background: rgba(255,255,255,0.05);
   margin-top: 1em;
   padding: 1em;
@@ -1792,15 +1792,15 @@ div.pagination a:hover {
 #js-location-map {
   height: 500px;
 }
-.newsListing article {
+.p-listing article {
   margin-bottom: 1em;
   overflow: hidden;
 }
-.newsListing article img {
+.p-listing article img {
   display: block;
   margin: 0 auto;
   width: 100%;
 }
-.newsListing article h3 {
+.p-listing article h3 {
   margin-top: 0;
 }

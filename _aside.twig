@@ -1,6 +1,6 @@
-<div class="sidebar-content">
+<aside>
 
-	<div class="sidebar-content-section">
+	<div class="sidebar-section">
 
 		{% setcontent about = "page/about" %}
 
@@ -21,7 +21,7 @@
 
 	{% for ct in app.config.get('contenttypes') if not ct.viewless|default(false) %}
 
-		<div class="sidebar-content-section">
+		<div class="sidebar-section">
 
 			{% setcontent records = ct.slug ~ "/latest/5" %}
 
@@ -41,4 +41,4 @@
 
 	{% endfor %}
 
-</div>
+<aside>
