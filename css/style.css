@@ -1809,6 +1809,24 @@ div.pagination a:hover {
 .p-listing article h3 {
   margin-top: 0;
 }
+.p-record-dir {
+  margin: 2em 0;
+}
+.p-record-previous,
+.p-record-next {
+  padding: 10px;
+  background: #eaeaea;
+  text-decoration: none;
+  color: #212121;
+}
+.p-record-previous {
+  float: left;
+  margin-left: -1em;
+}
+.p-record-next {
+  float: right;
+  margin-right: -1em;
+}
 /**
  * Element Specific styling
  */

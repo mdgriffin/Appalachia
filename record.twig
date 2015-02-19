@@ -2,7 +2,7 @@
 
 	<h1>{{ record.title }}</h1>
 
-	<div class="content" role="content">
+	<div class="content p-record" role="content">
 
 		<article>
 
@@ -91,18 +91,20 @@
 
 			{% include '_recordfooter.twig' with {record: record} %}
 
-			<p>
+
+			<div class="p-record-dir clearfix">
+				
 				{% set previous = record.previous('id') %}
 				{% if previous %}
-					<a href="{{ previous.link }}">&laquo; {{ previous.title }}</a>
+					<a href="{{ previous.link }}" class="p-record-previous">&laquo; {{ previous.title }}</a>
 				{% endif %}
-				-
-				{% set next = record.next('id') %}
 				
+				{% set next = record.next('id') %}
 				{% if next %}
-					<a href="{{ next.link }}">{{ next.title }} &raquo;</a>
+					<a href="{{ next.link }}" class="p-record-next">{{ next.title }} &raquo;</a>
 				{% endif %}
-			</p>
+
+			</div>
 
 			{% set relatedrecords = record.related() %}
 			
