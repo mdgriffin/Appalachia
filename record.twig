@@ -22,18 +22,21 @@
 
 				{% if record.fieldtype(key) == "imagelist" and value != "" %}
 
-					{# We do something tricky here: we need to get value of the list in the proper
-					way, so the value in actually returned as a list. Using {{ record.key }}
-					won't work, because there is no value 'key'. In your own templates you
-					will be able to use {{ record.yourfieldname }}. #}
-
 					{% set list = attribute(record, key) %}
 
-					{% for item in list %}
-						<a href="{{ image(item.filename) }}">
-							<img src="{{ thumbnail(item.filename, 100,100) }}" alt="{{ item.title }}" title="{{ item.title }}">
-						</a>
-					{% endfor %}
+					<ul class="listGrid-small2 listGrid-medium2 listGrid-large5 imageGrid">
+
+						{% for item in list %}
+
+							<li>
+								<a href="{{ image(item.filename) }}">
+									<img src="{{ thumbnail(item.filename, 200, 200) }}" title="{{ item.title }}">
+								</a>
+							</li>
+
+						{% endfor %}
+
+					</ul>
 
 				{% elseif record.fieldtype(key) == "video" and value.responsive is defined %}
 
@@ -57,7 +60,7 @@
 						{{ attribute(record, key)|join(", ") }}
 					</p>
 
-				{% elseif record.fieldtype(key) not in ['templateselect'] and value != "" %}
+				{% elseif record.fieldtype(key) not in ['templateselect'] and record.fieldtype(key) != "image" and value != "" %}
 
 					<p>
 						<strong>{{ key }}: </strong>
