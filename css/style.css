@@ -1804,7 +1804,18 @@ div.pagination a:hover {
 .p-listing article h3 {
   margin-top: 0;
 }
+/**
+ * Element Specific styling
+ */
 .responsive-video iframe {
   margin: 0 auto;
   display: block;
+}
+.googleMap img {
+  margin: 0 auto;
+  display: block;
+}
+.googleMap p {
+  text-align: center;
+  margin-top: 0;
 }
