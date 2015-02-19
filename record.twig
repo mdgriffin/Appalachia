@@ -20,17 +20,7 @@
 
 			{% for key,value in record.values if key not in ['id', 'slug', 'datecreated', 'datechanged', 'datepublish', 'datedepublish', 'username', 'status', 'title', 'subtitle', 'ownerid'] %}
 
-				{% if record.fieldtype(key) == "image" and value != "" %}
-
-					{% if record.image!="" %}
-						<div>
-							<a href="{{ image(value) }}">
-								<img src="{{ thumbnail(value, 640, 480) }}">
-							</a>
-						</div>
-					{% endif %}
-
-				{% elseif record.fieldtype(key) == "imagelist" and value != "" %}
+				{% if record.fieldtype(key) == "imagelist" and value != "" %}
 
 					{# We do something tricky here: we need to get value of the list in the proper
 					way, so the value in actually returned as a list. Using {{ record.key }}
