@@ -62,6 +62,22 @@
 						{{ attribute(record, key)|join(", ") }}
 					</p>
 
+				{% elseif record.fieldtype(key) == "file" %}
+
+					<a href="/files/{{ attribute(record, key) }}" target="_blank">{{ attribute(record, key) }}</a>
+
+				{% elseif record.fieldtype(key) == "filelist" %}
+
+					{% set list = attribute(record, key) %}
+
+					<ul>
+
+						{% for item in list %}
+							<li><a href="/files/{{ item.filename }}" target="_blank">{{ item.filename }}</a></li>
+						{% endfor %}
+
+					</ul>
+
 				{% elseif record.fieldtype(key) not in ['templateselect'] and record.fieldtype(key) != "image" and value != "" %}
 
 					<p>
