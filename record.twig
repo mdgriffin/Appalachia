@@ -89,7 +89,7 @@
 
 			{% endfor %}
 
-			{% include '_record_info.twig' with {record: record} %}
+			{% include '_recordfooter.twig' with {record: record} %}
 
 			<p>
 				{% set previous = record.previous('id') %}
