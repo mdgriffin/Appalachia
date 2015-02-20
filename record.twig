@@ -91,14 +91,13 @@
 
 			{% include '_recordfooter.twig' with {record: record} %}
 
-
 			<div class="p-record-dir clearfix">
-				
+
 				{% set previous = record.previous('id') %}
 				{% if previous %}
 					<a href="{{ previous.link }}" class="p-record-previous">&laquo; {{ previous.title }}</a>
 				{% endif %}
-				
+
 				{% set next = record.next('id') %}
 				{% if next %}
 					<a href="{{ next.link }}" class="p-record-next">{{ next.title }} &raquo;</a>
@@ -107,17 +106,22 @@
 			</div>
 
 			{% set relatedrecords = record.related() %}
-			
+
 			{% if relatedrecords is not empty %}
-				
-				<p>{{ __('Related content:') }}
-					<ul>
-						{% for related in relatedrecords %}
-							<li><a href="{{ related.link }}">{{ related.title }}</a></li>
-						{%  endfor %}
-					</ul>
-				</p>
-			
+
+				<h3>{{ __('Related content:') }}</h3>
+					
+				<ul class="listGrid-small2 listGrid-medium4 listGrid-large5 p-record-related-list">
+					{% for related in relatedrecords %}
+						<li>
+							<a href="{{ related.link }}">
+								<img class="image--fullWidth" src="{{ related.image|thumbnail(300,300) }}" title="{{ image.title }}">
+								{{ related.title }}
+							</a>
+						</li>
+					{%  endfor %}
+				</ul>
+
 			{% endif %}
 
 		</article>

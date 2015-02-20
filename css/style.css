@@ -1802,6 +1802,18 @@ div.pagination a:hover {
   float: right;
   margin-right: -1em;
 }
+.p-record-related-list li {
+  padding-bottom: 1em;
+}
+.p-record-related-list img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+.p-record-related-list a {
+  text-decoration: none;
+  color: #212121;
+}
 /**
  * Slider
  */
