@@ -7,13 +7,13 @@
 		{% set relatedslide = slide.related()|first %}
 
 		<div class="pogoSlider-slide" style="background-image:url({{ slide.image|thumbnail(1200, 500) }});">
-			
+
 			<h2 class="pogoSlider-slide-element" data-in="slideLeft" data-out="slideRight" data-duration="400">
-				
+
 				{% if relatedslide is not empty %}
 					<a href="{{ relatedslide.link }}">
 				{% endif %}
-				
+
 					{{ slide.title }}
 				
 				{% if relatedslide is not empty %}
@@ -26,9 +26,9 @@
 				{% if relatedslide is not empty %}
 						<a href="{{ relatedslide.link }}">
 					{% endif %}
-					
+
 					{{ slide.subtitle }}
-				
+
 				{% if relatedslide is not empty %}
 					</a>
 				{% endif %}
@@ -37,7 +37,6 @@
 
 		</div>
 
-		
 	{% endfor %}
 
 </div><!-- .pogoSlider -->
