@@ -55,18 +55,18 @@
 
 					{{ attribute(record, key) }}
 
-				{% elseif record.fieldtype(key) == "select" %}
+				{% elseif record.fieldtype(key) == "select" and value != "" %}
 
 					<p>
 						<strong>{{ key }}: </strong>
 						{{ attribute(record, key)|join(", ") }}
 					</p>
 
-				{% elseif record.fieldtype(key) == "file" %}
+				{% elseif record.fieldtype(key) == "file" and value != "" %}
 
 					<a href="/files/{{ attribute(record, key) }}" target="_blank">{{ attribute(record, key) }}</a>
 
-				{% elseif record.fieldtype(key) == "filelist" %}
+				{% elseif record.fieldtype(key) == "filelist" and value != "" %}
 
 					{% set list = attribute(record, key) %}
 
