@@ -1,24 +1,24 @@
 <div class="recordFooter">
 
 	<h5>
-		
+
 		{% if record.editlink() %}
 			<span class="edit-link"><a href="{{ record.editlink() }}"><strong>Edit</strong></a></span> -
 		{% endif %}
 		
 		{% set recdate = record.datepublish|localdate("%A %B %e, %Y") %}
 		{{ __('By <b>%name%</b> on %date%',{ '%name%': record.user.displayname, '%date%': recdate }) }} <br>
-		
+
 	</h5>
 
 	<ul class="list--reset">
-		
+
 		{% for type, values in record.taxonomy %}
-			
+
 			<li>
 
 				<h5>
-				
+
 					<em>
 						{% if values|length < 2 %}
 							{{ config.get('taxonomy')[type].singular_name }}:
@@ -35,7 +35,7 @@
 					{% endfor %}
 
 				</h5>
-			
+
 			</li>
 
 		{% endfor %}
