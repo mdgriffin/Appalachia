@@ -1,20 +1,30 @@
 {% include '_header.twig' %}
 
-	<h1>Galleries</h1>
+	{% if taxonomytype is defined %}
+		<h1>
+			{{ __('Overview for') }}
+			{% if taxonomy.options[slug] is defined %}
+				{{ taxonomy.options[slug] }}
+			{% else %}
+				{{ slug }}
+			{% endif %}
+		</h1>
+		
+		{% set records = records|order(app.config.get('general/listing_sort')) %}
+	
+	{% endif %}
 
 	<div class="content p-galleryListing" role="content">
 
-		{% setcontent galleries = "gallery/latest/5" allowpaging %}
-
-		{% for gallery in galleries %}
+		{% for record in records %}
 
 			<article>
 
-				<h2><a href="{{ gallery.link }}">{{ gallery.title }}</a></h2>
+				<h2><a href="{{ record.link }}">{{ record.title }}</a></h2>
 
 				<ul class="listGrid-small2 listGrid-medium4 listGrid-large5 imageGrid">
 
-					{% for image in gallery.imagelist %}
+					{% for image in record.imagelist %}
 
 						<li>
 							<a href="{{ image(image.filename) }}">
