@@ -1,0 +1,28 @@
+# For use with the slider partial template
+slides:
+    name: Slides
+    singular_name: Slide
+    fields:
+        title:
+            type: text
+            class: large
+        slug:
+            type: slug
+            uses: title
+        subtitle:
+            type: text
+            class: large
+        image:
+            type: image
+    default_status: publish
+    relations:
+        gallery:
+            multiple: false
+            label: Choose a related gallery
+            order: -id
+            format: "{{ item.title|escape }} <span>(№ {{ item.id }})</span>"
+        entries:
+            multiple: false
+            label: Choose a related news item
+            order: -id
+            format: "{{ item.title|escape }} <span>(№ {{ item.id }})</span>"

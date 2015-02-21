@@ -1,0 +1,26 @@
+# For use wih the gallery and gallery_listing template
+gallery:
+    name: Galleries
+    singular_name: Gallery
+    fields:
+        title:
+            type: text
+            class: large
+            required: true
+            pattern: "*{2,255}" # see: http://html5pattern.com/
+        slug:
+            type: slug
+            uses: title
+        imagelist:
+            type: imagelist
+        textarea:
+            type: textarea
+        date:
+            type: date
+            default: "first day of last month"
+    taxonomy: [ categories, tags]
+    show_on_dashboard: true
+    default_status: publish
+    searchable: false
+    record_template: gallery.twig
+    listing_template: gallery_listing.twig
