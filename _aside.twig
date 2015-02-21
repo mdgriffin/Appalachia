@@ -8,34 +8,34 @@
 
 			<h5>{{ about.title }}</h5>
 			{{ about.teaser }}
-			<a href="{{ about.link }}">{{ __('Read more') }} &raquo;</a>
+			<a href="{{ about.link }}">{{ __("Read more") }} &raquo;</a>
 
 		{% else %}
 
-			<h5>{{ __('Alas, no about!') }}</h5>
+			<h5>{{ __("Alas, no about!") }}</h5>
 			<p>{{ __("If there was a Page with 'about' for a slug, it would've been shown here. But there isn't one, so that's why you're seeing this placeholder.") }}</p>
 
 		{% endif %}
 
 	</div>
 
-	{% for ct in app.config.get('contenttypes') if not ct.viewless|default(false) %}
+	{% for ct in app.config.get("contenttypes") if not ct.viewless|default(false) %}
 
 		<div class="sidebar-section">
 
 			{% setcontent records = ct.slug ~ "/latest/5" %}
 
-			<h5>{{ __('contenttypes.generic.recent', {'%contenttypes%': ct.slug}) }}</h5>
+			<h5>{{ __("contenttypes.generic.recent", {"%contenttypes%": ct.slug}) }}</h5>
 			
 			<ul class="list--reset">
 				{% for record in records %}
 					<li><a href="{{ record.link }}">{{ record.title }}</a></li>
 				{% else %}
-					<li>{{ __('contenttypes.generic.no-recent', {'%contenttype%': ct.slug}) }}</li>
+					<li>{{ __("contenttypes.generic.no-recent", {"%contenttype%": ct.slug}) }}</li>
 				{% endfor %}
 			</ul>
 			
-			<p><a href="{{ paths.root }}{{ct.slug}}">{{ __('contenttypes.generic.overview',{'%contenttypes%': ct.slug}) }} &raquo;</a></p>
+			<p><a href="{{ paths.root }}{{ct.slug}}">{{ __("contenttypes.generic.overview",{"%contenttypes%": ct.slug}) }} &raquo;</a></p>
 
 		</div>
 

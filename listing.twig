@@ -1,8 +1,8 @@
-{% include '_header.twig' %}
+{% include "_header.twig" %}
 
 	{% if taxonomytype is defined %}
 		<h1>
-			{{ __('Overview for') }}
+			{{ __("Overview for") }}
 			{% if taxonomy.options[slug] is defined %}
 				{{ taxonomy.options[slug] }}
 			{% else %}
@@ -10,7 +10,7 @@
 			{% endif %}
 		</h1>
 		
-		{% set records = records|order(app.config.get('general/listing_sort')) %}
+		{% set records = records|order(app.config.get("general/listing_sort")) %}
 	
 	{% endif %}
 
@@ -18,7 +18,7 @@
 
 		{% if search is defined %}
 			<h1>
-				{{ __('Search results for <b> %search% </b>.', { '%search%': search|escape }) }}
+				{{ __("Search results for <b> %search% </b>.", { "%search%": search|escape }) }}
 			</h1>
 		{% endif %}
 		
@@ -46,7 +46,7 @@
 
 						<p>{{ record.excerpt(300) }} <a href="{{ record.link }}">more</a></p>
 
-						{% include '_recordfooter.twig' with {record: record} %}
+						{% include "_recordfooter.twig" with {record: record} %}
 
 					</article>
 
@@ -63,7 +63,7 @@
 					{% if search is defined %}
 
 						<p>
-							{{ __("No results found for '%search%'. Please try another search.", { '%search%': search|escape }) }}
+							{{ __("No results found for '%search%'. Please try another search.", { "%search%": search|escape }) }}
 						</p>
 
 					{% else %}
@@ -85,4 +85,4 @@
 
 	{{ pager() }}
 
-{% include '_footer.twig' %}
+{% include "_footer.twig" %}

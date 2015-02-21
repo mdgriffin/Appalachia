@@ -10,11 +10,11 @@
 
 	<title>
 		{% if record.title is defined %}{{ record.title|striptags }} | {% endif %}
-		{{ app.config.get('general/sitename') }}
-		{% if record.title is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff') }}{% endif %}
+		{{ app.config.get("general/sitename") }}
+		{% if record.title is not defined and app.config.get("general/payoff") %} | {{ app.config.get("general/payoff") }}{% endif %}
 	</title>
 
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="{{ paths.theme }}css/style.css">
 
 </head>

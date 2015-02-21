@@ -1,8 +1,8 @@
-{% include '_header.twig' %}
+{% include "_header.twig" %}
 
 	{% if taxonomytype is defined %}
 		<h1>
-			{{ __('Overview for') }}
+			{{ __("Overview for") }}
 			{% if taxonomy.options[slug] is defined %}
 				{{ taxonomy.options[slug] }}
 			{% else %}
@@ -10,7 +10,7 @@
 			{% endif %}
 		</h1>
 		
-		{% set records = records|order(app.config.get('general/listing_sort')) %}
+		{% set records = records|order(app.config.get("general/listing_sort")) %}
 	
 	{% endif %}
 
@@ -42,4 +42,4 @@
 
 		{{ pager() }}
 
-{% include '_footer.twig' %}
+{% include "_footer.twig" %}

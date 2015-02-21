@@ -1,4 +1,4 @@
-{% include '_header.twig' %}
+{% include "_header.twig" %}
 
 	<h1>{{ record.title }}</h1>
 
@@ -18,7 +18,7 @@
 				<h3>{{ record.subtitle }}</h3>
 			{% endif %}
 
-			{% for key,value in record.values if key not in ['id', 'slug', 'datecreated', 'datechanged', 'datepublish', 'datedepublish', 'username', 'status', 'title', 'subtitle', 'ownerid'] %}
+			{% for key,value in record.values if key not in ["id", "slug", "datecreated", "datechanged", "datepublish", "datedepublish", "username", "status", "title", "subtitle", "ownerid"] %}
 
 				{% if record.fieldtype(key) == "imagelist" and value != "" %}
 
@@ -51,7 +51,7 @@
 					</div>
 					
 
-				{% elseif record.fieldtype(key) in ['html', 'markdown', 'textarea'] %}
+				{% elseif record.fieldtype(key) in ["html", "markdown", "textarea"] %}
 
 					{{ attribute(record, key) }}
 
@@ -78,7 +78,7 @@
 
 					</ul>
 
-				{% elseif record.fieldtype(key) not in ['templateselect'] and record.fieldtype(key) != "image" and value != "" %}
+				{% elseif record.fieldtype(key) not in ["templateselect"] and record.fieldtype(key) != "image" and value != "" %}
 
 					<p>
 						<strong>{{ key }}: </strong>
@@ -89,16 +89,16 @@
 
 			{% endfor %}
 
-			{% include '_recordfooter.twig' with {record: record} %}
+			{% include "_recordfooter.twig" with {record: record} %}
 
 			<div class="p-record-dir clearfix">
 
-				{% set previous = record.previous('id') %}
+				{% set previous = record.previous("id") %}
 				{% if previous %}
 					<a href="{{ previous.link }}" class="p-record-previous">&laquo; {{ previous.title }}</a>
 				{% endif %}
 
-				{% set next = record.next('id') %}
+				{% set next = record.next("id") %}
 				{% if next %}
 					<a href="{{ next.link }}" class="p-record-next">{{ next.title }} &raquo;</a>
 				{% endif %}
@@ -109,7 +109,7 @@
 
 			{% if relatedrecords is not empty %}
 
-				<h3>{{ __('Related content:') }}</h3>
+				<h3>{{ __("Related content:") }}</h3>
 					
 				<ul class="listGrid-small2 listGrid-medium4 listGrid-large5 p-record-related-list">
 					{% for related in relatedrecords %}
@@ -126,4 +126,4 @@
 
 		</article>
 
-{% include '_footer.twig' %}
+{% include "_footer.twig" %}

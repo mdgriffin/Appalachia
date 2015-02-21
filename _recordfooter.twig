@@ -7,7 +7,7 @@
 		{% endif %}
 		
 		{% set recdate = record.datepublish|localdate("%A %B %e, %Y") %}
-		{{ __('By <b>%name%</b> on %date%',{ '%name%': record.user.displayname, '%date%': recdate }) }} <br>
+		{{ __("By <b>%name%</b> on %date%",{ "%name%": record.user.displayname, "%date%": recdate }) }} <br>
 
 	</h5>
 
@@ -21,9 +21,9 @@
 
 					<em>
 						{% if values|length < 2 %}
-							{{ config.get('taxonomy')[type].singular_name }}:
+							{{ config.get("taxonomy")[type].singular_name }}:
 						{% else %}
-							{{ config.get('taxonomy')[type].name }}:
+							{{ config.get("taxonomy")[type].name }}:
 						{% endif %}
 					</em>
 					
@@ -31,7 +31,7 @@
 						<a href="{{ link }}">{{ value }}</a>
 						{% if not loop.last %}, {% endif %}
 						{% else %}
-						{{ __('none') }}
+						{{ __("none") }}
 					{% endfor %}
 
 				</h5>

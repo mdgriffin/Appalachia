@@ -1,10 +1,10 @@
-{% include '_header.twig' %}
+{% include "_header.twig" %}
 
 	<div class="content p-home" role="content">
 
 		<div class="fullWidthTop">
 			
-			{% include '_slider.twig' %}
+			{% include "_slider.twig" %}
 
 		</div>
 
@@ -43,7 +43,7 @@
 				{% else %}
 					
 					<p>
-						{{ __('Content for home not found!') }} 
+						{{ __("Content for home not found!") }} 
 						{{ __("You should set 'homepage:' in your 'app/config/config.yml' to an existing record. Make sure that the content is published, otherwise it will not be shown.") }}
 					</p>
 				
@@ -51,7 +51,7 @@
 			
 			</article>
 
-			<h4>{{ __('Latest entries') }}</h4>
+			<h4>{{ __("Latest entries") }}</h4>
 
 			{% setcontent records = "entries/latest/6" allowpaging %}
 			
@@ -79,4 +79,4 @@
 
 		</div>
 
-{% include '_footer.twig' %}
+{% include "_footer.twig" %}
