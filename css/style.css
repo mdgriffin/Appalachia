@@ -1868,16 +1868,16 @@ div.pagination a:hover {
 #js-location-map {
   height: 500px;
 }
-.p-listing article {
+.gridListing article {
   margin-bottom: 1em;
   overflow: hidden;
 }
-.p-listing article img {
+.gridListing article img {
   display: block;
   margin: 0 auto;
   width: 100%;
 }
-.p-listing article h3 {
+.gridListing article h3 {
   margin-top: 0;
 }
 /**
