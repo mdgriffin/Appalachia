@@ -16,13 +16,12 @@ slides:
             type: image
     default_status: publish
     relations:
-        gallery:
-            multiple: false
-            label: Choose a related gallery
-            order: -id
-            format: "{{ item.title|escape }} <span>(№ {{ item.id }})</span>"
         entries:
             multiple: false
             label: Choose a related news item
             order: -id
             format: "{{ item.title|escape }} <span>(№ {{ item.id }})</span>"
+        pages:
+          multiple: false
+          order: title
+          label: Select a page
