@@ -1825,6 +1825,9 @@ div.pagination a:hover {
   text-decoration: none;
   color: #212121;
 }
+.p-galleryListing article h2 {
+  margin-top: 0;
+}
 /**
  * Slider
  */
