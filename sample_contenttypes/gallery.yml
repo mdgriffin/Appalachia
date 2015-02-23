@@ -13,8 +13,6 @@ gallery:
             uses: title
         imagelist:
             type: imagelist
-        textarea:
-            type: textarea
         date:
             type: date
             default: "first day of last month"
