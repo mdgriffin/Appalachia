@@ -1492,6 +1492,25 @@ blockquote {
   background: #b62925;
   color: #fff;
 }
+.sidebar aside {
+  color: #878e8e;
+}
+.sidebar aside a {
+  color: inherit;
+  text-decoration: none;
+}
+.sidebar aside a:hover {
+  color: #fff;
+}
+.sidebar aside h4 {
+  margin-top: 0;
+  border-bottom: 3px solid #b62925;
+  padding-bottom: 1em;
+  color: #c6c6c6;
+}
+.sidebar-section {
+  margin-left: 1em;
+}
 .sidebar-logo {
   padding: 4em 1em;
   -webkit-transition: -webkit-transform 0.3s;
@@ -1504,9 +1523,6 @@ blockquote {
   margin: 0 auto;
   display: block;
   max-width: 100%;
-}
-.sidebar aside {
-  color: #fff;
 }
 .sidebar-search {
   margin: 2em 0 2em 1em;
@@ -1534,11 +1550,6 @@ blockquote {
 }
 .sidebar-search input[type="submit"]:hover {
   background: #cb2e29;
-}
-.sidebar-section {
-  background: rgba(255,255,255,0.05);
-  margin-top: 1em;
-  padding: 1em;
 }
 .container {
   float: right;

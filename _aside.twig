@@ -6,7 +6,7 @@
 
 		{% if about.title is defined %}
 
-			<h5>{{ about.title }}</h5>
+			<h4>{{ about.title }}</h4>
 			{{ about.teaser }}
 			<a href="{{ about.link }}">{{ __("Read more") }} &raquo;</a>
 
@@ -25,9 +25,9 @@
 
 			{% setcontent records = ct.slug ~ "/latest/5" %}
 
-			<h5>{{ __("contenttypes.generic.recent", {"%contenttypes%": ct.slug}) }}</h5>
+			<h4>{{ __("contenttypes.generic.recent", {"%contenttypes%": ct.slug}) }}</h4>
 			
-			<ul class="list--reset">
+			<ul>
 				{% for record in records %}
 					<li><a href="{{ record.link }}">{{ record.title }}</a></li>
 				{% else %}
