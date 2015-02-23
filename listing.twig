@@ -24,38 +24,40 @@
 		
 		<div class="grid gridListing">
 
-			{% for record in records %}
+			{% for col in 0..2 %}
 
-				{% if (loop.index - 1) % 3 == 0 %}
+				<div class="small12 medium4">
 
-					<div class="small12 medium4">
+					{% for record in records %}
 
-				{% endif %}
+						{% if (loop.index - 1) % 3 == col %}
 
-					<article>
+							<article>
 
-						<h3><a href="{{ record.link }}">{{ record.title }}</a></h3>
+								<h3><a href="{{ record.link }}">{{ record.title }}</a></h3>
 
-						{% if record.image!="" %}
-							<a href="{{ record.link }}">
-								<img src="{{ record.image|thumbnail(400, 200) }}" title="{{ image.title }}">
+								{% if record.image!="" %}
+									<a href="{{ record.link }}">
+										<img src="{{ record.image|thumbnail(400, 200) }}" title="{{ image.title }}">
 
-							</a>
+									</a>
+								{% endif %}
+
+								<p>{{ record.excerpt(300) }} <a href="{{ record.link }}">more</a></p>
+
+								{% include "_recordfooter.twig" with {record: record} %}
+
+							</article>
+
 						{% endif %}
 
-						<p>{{ record.excerpt(300) }} <a href="{{ record.link }}">more</a></p>
+					{% endfor %}
 
-						{% include "_recordfooter.twig" with {record: record} %}
+				</div>
 
-					</article>
+			{% endfor %}
 
-				{% if loop.index % 3 == 0 or loop.index == loop.length %}
-
-					</div>
-
-				{% endif %}
-
-			{% else %}
+			{% if records is empty %}
 
 				<article class="small12">
 
@@ -78,7 +80,7 @@
 
 				</article>
 			
-			{% endfor %}
+			{% endif %}
 
 		</div><!-- .grid -->
 
