@@ -1,0 +1,55 @@
+{% include "_header.twig" %}
+
+	<h1>{{ record.title }} - !!! entry template</h1>
+
+	<div class="content p-entry" role="content">
+
+		<article>
+
+			{% if record.image!="" %}
+				<div class="fullWidthTop">	
+					<a href="{{ image(record.image) }}">
+						<img class="image--fullWidth" src="{{ record.image|thumbnail(1200,400) }}" title="{{ image.title }}">
+					</a>
+				</div>
+			{% endif %}
+
+			{{ record.teaser }}
+
+			{% if record.video is not empty %}
+				{{ record.video.responsive }}
+			{% endif %}
+
+			{{ record.body }}
+
+			{% include '_recordfooter.twig' with {'record': record} %}
+
+			{% if Disqus is defined %}
+				
+				<h4>Leave a comment</h4>
+				{{ Disqus.disqus() }}
+			
+			{% elseif FacebookComments is defined %}
+				
+				<h4>Leave a comment</h4>                
+				{{ FacebookComments.facebookComments() }}            
+			
+			{% endif %}
+
+			<div class="articleMeta clearfix">
+
+				{% set previous = record.previous("id") %}
+				{% if previous %}
+					<a href="{{ previous.link }}" class="p-record-previous">&laquo; {{ previous.title }}</a>
+				{% endif %}
+
+				{% set next = record.next("id") %}
+				{% if next %}
+					<a href="{{ next.link }}" class="p-record-next">{{ next.title }} &raquo;</a>
+				{% endif %}
+
+			</div>
+
+		</article>
+
+{% include "_footer.twig" %}

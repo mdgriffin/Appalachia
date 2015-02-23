@@ -1795,9 +1795,6 @@ div.pagination a:hover {
 /**
  * Page Specific styling
  */
-.p-record-dir {
-  margin: 2em 0;
-}
 .p-record-previous,
 .p-record-next {
   padding: 10px;
@@ -1882,6 +1879,9 @@ div.pagination a:hover {
 }
 .gridListing article h3 {
   margin-top: 0;
+}
+.articleMeta {
+  margin: 2em 0;
 }
 /**
  * Element Specific styling
