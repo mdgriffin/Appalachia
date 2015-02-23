@@ -30,7 +30,11 @@
 
 		{% include "_sub_searchbox.twig" %}
 
-		{% include "_aside.twig" %}
+		{% if theme.showSidebarRecent or theme.showSidebarAbout %}
+
+			{% include "_aside.twig" %}
+
+		{% endif %}
 
 	</div><!-- .sidebar -->
 

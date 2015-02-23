@@ -1,44 +1,52 @@
 <aside>
 
-	<div class="sidebar-section">
-
-		{% setcontent about = "page/about" %}
-
-		{% if about.title is defined %}
-
-			<h4>{{ about.title }}</h4>
-			{{ about.teaser }}
-			<a href="{{ about.link }}">{{ __("Read more") }} &raquo;</a>
-
-		{% else %}
-
-			<h5>{{ __("Alas, no about!") }}</h5>
-			<p>{{ __("If there was a Page with 'about' for a slug, it would've been shown here. But there isn't one, so that's why you're seeing this placeholder.") }}</p>
-
-		{% endif %}
-
-	</div>
-
-	{% for ct in app.config.get("contenttypes") if not ct.viewless|default(false) %}
+	{% if theme.showSidebarAbout %}
 
 		<div class="sidebar-section">
 
-			{% setcontent records = ct.slug ~ "/latest/5" %}
+			{% setcontent about = "page/about" %}
 
-			<h4>{{ __("contenttypes.generic.recent", {"%contenttypes%": ct.slug}) }}</h4>
-			
-			<ul>
-				{% for record in records %}
-					<li><a href="{{ record.link }}">{{ record.title }}</a></li>
-				{% else %}
-					<li>{{ __("contenttypes.generic.no-recent", {"%contenttype%": ct.slug}) }}</li>
-				{% endfor %}
-			</ul>
-			
-			<p><a href="{{ paths.root }}{{ct.slug}}">{{ __("contenttypes.generic.overview",{"%contenttypes%": ct.slug}) }} &raquo;</a></p>
+			{% if about.title is defined %}
+
+				<h4>{{ about.title }}</h4>
+				{{ about.teaser }}
+				<a href="{{ about.link }}">{{ __("Read more") }} &raquo;</a>
+
+			{% else %}
+
+				<h5>{{ __("Alas, no about!") }}</h5>
+				<p>{{ __("If there was a Page with 'about' for a slug, it would've been shown here. But there isn't one, so that's why you're seeing this placeholder.") }}</p>
+
+			{% endif %}
 
 		</div>
 
-	{% endfor %}
+	{% endif %}
+
+	{% if theme.showSidebarRecent %}
+
+		{% for ct in app.config.get("contenttypes") if not ct.viewless|default(false) %}
+
+			<div class="sidebar-section">
+
+				{% setcontent records = ct.slug ~ "/latest/5" %}
+
+				<h4>{{ __("contenttypes.generic.recent", {"%contenttypes%": ct.slug}) }}</h4>
+				
+				<ul>
+					{% for record in records %}
+						<li><a href="{{ record.link }}">{{ record.title }}</a></li>
+					{% else %}
+						<li>{{ __("contenttypes.generic.no-recent", {"%contenttype%": ct.slug}) }}</li>
+					{% endfor %}
+				</ul>
+				
+				<p><a href="{{ paths.root }}{{ct.slug}}">{{ __("contenttypes.generic.overview",{"%contenttypes%": ct.slug}) }} &raquo;</a></p>
+
+			</div>
+
+		{% endfor %}
+
+	{% endif %}
 
 <aside>

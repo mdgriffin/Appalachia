@@ -3,7 +3,8 @@
 # Variables that are in this file, can be used in your twig template like {{ theme.foo }}
 # Note: If variables do not immediately show up, clear the cache, in the Bolt Backend.
 
-foo: bar
+showSidebarRecent: true
+showSidebarAbout: true
 
 # Template filenames. If you 're creating a theme for distribution, you can specify
 # the filenames of the templates here. The templates you will set in this config
