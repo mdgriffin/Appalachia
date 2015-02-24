@@ -1551,6 +1551,14 @@ blockquote {
 .sidebar-search input[type="submit"]:hover {
   background: #cb2e29;
 }
+@media screen and (max-width: 64em) {
+  .sidebar-search {
+    margin: 2em 1em;
+  }
+  .sidebar-section {
+    margin: 1em;
+  }
+}
 .container {
   float: right;
   width: 75%;
