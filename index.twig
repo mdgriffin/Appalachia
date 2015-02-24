@@ -2,11 +2,17 @@
 
 	<div class="content p-home" role="content">
 
-		<div class="fullWidthTop">
-			
-			{% include "_slider.twig" %}
+		{% setcontent slides = "slide/latest/4" %}
 
-		</div>
+		{% if slides is not empty %}
+
+			<div class="fullWidthTop">
+
+				{% include "_slider.twig" with {'slides': slides} %}
+
+			</div>
+
+		{% endif %}
 
 		<h2>{{ __("Latest entries") }}</h2>
 
