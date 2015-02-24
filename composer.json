@@ -1,0 +1,16 @@
+{
+    "name": "mdgriffin/appalachia",
+    "description": "An unique and responsive theme for Bolt",
+    "type": "bolt-theme",
+    "keywords": ["theme", "bolt", "appalachia", "responsive"],
+    "require": {
+        "bolt/bolt": ">=2.0.0,<3.0.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Griffin",
+            "email": "mdgriffin064@gmail.com"
+        }
+    ]
+}
