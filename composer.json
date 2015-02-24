@@ -12,5 +12,10 @@
             "name": "Michael Griffin",
             "email": "mdgriffin064@gmail.com"
         }
-    ]
+    ],
+    "extra": {
+        "bolt-screenshots": [
+            "preview.png"
+        ]
+    }
 }
