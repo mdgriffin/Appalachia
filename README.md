@@ -2,6 +2,8 @@
 
 ![Preview](preview.png)
 
+[View Demo Here](http://fluice.com/appalachia/)
+
 ### Configuration
 
 The config.yml file contains a few properties that can be edited to configure the theme
